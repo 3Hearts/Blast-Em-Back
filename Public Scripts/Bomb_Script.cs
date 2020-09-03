@@ -9,13 +9,8 @@ public class Bomb_Script : MonoBehaviour
     public float radius = 100F;
     public float power = 500.0F;
 
-   // public PlayerController playercontroller;
-
-   // public GameObject[] canbreak;
-
     void Awake()
     {
-        //playercontroller = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         StartCoroutine(Bomblife());
     }
 
@@ -28,9 +23,6 @@ public class Bomb_Script : MonoBehaviour
         Explode();
 
         Destroy(this.gameObject);
-
-
-
     }
 
    void Explode()
@@ -47,9 +39,6 @@ public class Bomb_Script : MonoBehaviour
                 rb.isKinematic = false;
                 rb.AddExplosionForce(power, explosionPos, radius, 4.0F, ForceMode.Impulse);
             }
-              
         }
-
     }
-   
 }
