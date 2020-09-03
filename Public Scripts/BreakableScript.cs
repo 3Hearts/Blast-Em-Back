@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class BreakableScript : MonoBehaviour
 {
-
     private Rigidbody rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
         DisableRagdoll();
     }
 
@@ -18,14 +16,11 @@ public class BreakableScript : MonoBehaviour
     void EnableRagdoll()
     {
         rb.isKinematic = false;
-      //  rb.detectCollisions = true;
     }
 
-    // Let animation control the rigidbody and ignore collisions.
     void DisableRagdoll()
     {
         rb.isKinematic = true;
-       // rb.detectCollisions = false;
     }
 
     void OnTriggerEnter(Collider col)
@@ -39,7 +34,6 @@ public class BreakableScript : MonoBehaviour
     IEnumerator Breakabledeath()
     {
         yield return new WaitForSeconds(1.5f);
-
         Destroy(this.gameObject);
     }
 }
